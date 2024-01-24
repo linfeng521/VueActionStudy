@@ -1,0 +1,21 @@
+name: vue-action
+on:
+  push:
+    branches:
+      - main
+
+  jobs:
+    build-and-deploy:
+      runs-on: ubuntu-20.04
+      steps:
+       # 这是github官方的一个action，用于clone该仓库的源码到工作流中，
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Build
+        run: |
+          cd vueaction # 进入项目目录
+          npm install  # 安装依赖
+          npm run build  # 执行打包
