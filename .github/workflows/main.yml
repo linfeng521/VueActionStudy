@@ -19,3 +19,10 @@ jobs:
           cd vueaction # 进入项目目录
           npm install  # 安装依赖
           npm run build  # 执行打包
+          
+      - name: Deploy 🚀                         # 第三步：部署
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist                         # 部署的目录
+          branch: gh-pages                     # 部署到哪个分支
+
