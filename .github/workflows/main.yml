@@ -7,6 +7,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-20.04
+    environment: 
+      name: REMOTE_HOST
     steps:
        # 这是github官方的一个action，用于clone该仓库的源码到工作流中，
       - name: Checkout 🛎️
