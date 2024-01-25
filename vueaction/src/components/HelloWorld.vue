@@ -4,6 +4,9 @@
     <hr />
     <h2>{{ name }}</h2>
     <el-button @click="showMsg">点击</el-button>
+    <el-tooltip content="linfeng">
+      <h3>{{ detail }}</h3>
+    </el-tooltip>
   </div>
 </template>
 
@@ -15,7 +18,8 @@ export default {
   },
   data() {
     return {
-      name: "linfeng  github action 学习"
+      name: "linfeng  github action 学习",
+      detail:"action 学习完成搭建完毕自动部署到远程服务器scp"
     }
   },
   methods: {
