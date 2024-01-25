@@ -7,7 +7,7 @@
     <el-tooltip content="linfeng">
       <h3>{{ detail }}</h3>
     </el-tooltip>
-    <el-tag>为了安全性改为了private 仓库</el-tag>
+    <el-tag>为了安全性改为了private 仓库,似乎不太行对于serc 变量无法获取</el-tag>
   </div>
 </template>
 
