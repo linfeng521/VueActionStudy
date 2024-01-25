@@ -20,9 +20,14 @@ jobs:
           npm install  # 安装依赖
           npm run build  # 执行打包
           
-      - name: Deploy 🚀                         # 第三步：部署
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: SCP Files Deploy 🚀     # 第三步：部署
+        uses: appleboy/scp-action@v0.1.7
         with:
-          folder: dist                         # 部署的目录
-          branch: main                     # 部署到哪个分支
+          host: ${{ secrets.REMOTE_HOST }}  # 远程服务器的地址
+          username: ${{ secrets.REMOTE_USER }}  # 远程服务器的用户名
+          key: ${{ secrets.SSH_PRIVATE_KEY }}  # 你的 SSH 私钥
+          source: "vueaction/dist/"  # 构建后的文件夹路径
+          target: "/var/www/html"  # 远程服务器上的目标路径
+          strip-components: 1  # 移除源目录中的一级目录
+
 
